@@ -1,15 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-export const Box = ({player, mark, clickBox, index}) => {
+export const Box = ({player, mark, clickBox, index, result}) => {
   const [isShown, setIsShown] = useState(false)
 
   return (
   <StyledBox 
-    onMouseEnter={() => setIsShown(true)}
+    onMouseEnter={() => !result && setIsShown(true)}
     onMouseLeave={() => setIsShown(false)}
-    onClick={() => (mark === null) && clickBox(index)}
+    onClick={() => !result && (mark === null) && clickBox(index)}
     mark
+    result
   >
     <span className="mark">
       {mark}
@@ -31,6 +32,7 @@ const StyledBox =styled.div`
   font-size: 3rem;
   box-shadow: 5px 5px 10px blueviolet;
   border-radius: 12px;
+  /* cursor: ${props => props.result === true ? "not-allowed" : "pointer"}; */
   .hover{
     color: rgba(0,0,0,0.5)
   }
