@@ -45,6 +45,7 @@ function App() {
   const okay = () => {
     setBoxes([null, null, null, null, null, null, null, null, null]);
     setresultDeclared(!resultDeclared);
+    setPlayer("X");
   };
 
   return (
