@@ -78,8 +78,8 @@ export default App;
 
 const Board = styled.div`
   display: grid;
-  grid-gap: 3rem;
-  grid-template-columns: 50px 50px 50px;
+  grid-gap: 1rem;
+  grid-template-columns: auto auto auto;
   justify-content: center;
   margin: 3rem auto;
 `;
